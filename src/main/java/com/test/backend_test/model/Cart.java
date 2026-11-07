@@ -16,7 +16,7 @@ public class Cart {
     @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<CartItem> items = new ArrayList<>();
 
-    // Calcul automatique du total requis dans l'énoncé
+    // Calcul automatique du total
     @Transient
     public Double getTotalAmount() {
         return items.stream()
